@@ -11,4 +11,24 @@ Find the sum of all the even-valued terms in the sequence which do not
 exceed four million.
 */
 
+#include <iostream>
 
+using namespace std;
+
+int main() {
+	int a = 1, b = 1, sum = 0;
+
+	while (a < 4000000) {
+		a += b;
+		b += a;
+
+		if (a < 4000000 && a % 2 == 0) {
+			sum += a;
+		}
+		if (b < 4000000 && b % 2 == 0) {
+			sum += b;
+		}
+	}
+
+	cout << sum << endl;
+}

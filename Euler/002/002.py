@@ -11,4 +11,17 @@ Find the sum of all the even-valued terms in the sequence which do not
 exceed four million.
 """
 
+a = 1
+b = 1
+total = 0
 
+while (a < 4000000):
+	a += b
+	b += a
+
+	if (a < 4000000 and a % 2 == 0):
+		total += a
+	if (b < 4000000 and b % 2 == 0):
+		total += b
+
+print(total)
